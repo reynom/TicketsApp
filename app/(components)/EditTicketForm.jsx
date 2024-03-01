@@ -61,8 +61,9 @@ const EditTicketForm = ({ ticket }) => {
       }
     }
 
-    router.refresh();
+    
     router.push("/");
+    router.refresh();
   };
 
   const categories = [
