@@ -1,8 +1,10 @@
 import EditTicketForm from "@/app/(components)/EditTicketForm";
 
 const getTicketById = async (id) => {
+  console.log("Starting get ticket")
   try {
-    const res = await fetch(`/api/Tickets/${id}`, {
+    console.log("Starting get ticket try");
+    const res = await fetch(process.env.URL + `/api/Tickets/${id}`, {
       cache: "no-store",
     });
 
@@ -22,6 +24,9 @@ const TicketPage = async ({ params }) => {
 
   if (EDITMODE) {
     updateTicketData = await getTicketById(params.id);
+    // TODO Problem Here
+    console.log("get ticket ID = ", params.id)
+    console.log("Got Here: ",updateTicketData)
     updateTicketData = updateTicketData.foundTicket;
   } else {
     updateTicketData = {
