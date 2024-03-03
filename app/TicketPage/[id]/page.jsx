@@ -1,10 +1,12 @@
 import EditTicketForm from "@/app/(components)/EditTicketForm";
 
 const getTicketById = async (id) => {
-  console.log("Starting get ticket")
+  console.log("Starting get ticket");
   try {
     console.log("Starting get ticket try");
-    const res = await fetch(`http://localhost:3000/api/Tickets/${id}`, {
+    const url = process.env.URL;
+    console.log("URL :", url);
+    const res = await fetch(`http://127.0.0.1:3000/api/Tickets/${id}`, {
       cache: "no-store",
     });
 
@@ -25,8 +27,8 @@ const TicketPage = async ({ params }) => {
   if (EDITMODE) {
     updateTicketData = await getTicketById(params.id);
     // TODO Problem Here
-    console.log("get ticket ID = ", params.id)
-    console.log("Got Here: ",updateTicketData)
+    console.log("get ticket ID = ", params.id);
+    console.log("Got Here: ", updateTicketData);
     updateTicketData = updateTicketData.foundTicket;
   } else {
     updateTicketData = {
