@@ -4,9 +4,9 @@ const getTicketById = async (id) => {
   console.log("Starting get ticket");
   try {
     console.log("Starting get ticket try");
-    const url = process.env.URL;
-    console.log("URL :", url);
-    const res = await fetch(`http://127.0.0.1:3000/api/Tickets/${id}`, {
+    const url = process.env.URL + `/api/Tickets/` ;
+    console.log("Second URL :", url);
+    const res = await fetch(process.env.URL + `/api/Tickets/${id}`, {
       cache: "no-store",
     });
 
