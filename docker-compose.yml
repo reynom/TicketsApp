@@ -11,7 +11,7 @@ services:
       - proxy
     restart: always
     env_file:
-      - path: ./stack.env
+      - path: "./stack.env"
         required: true # default
     labels:
       - "traefik.enable=true"
