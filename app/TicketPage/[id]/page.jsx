@@ -1,11 +1,13 @@
 import EditTicketForm from "@/app/(components)/EditTicketForm";
 
 const getTicketById = async (id) => {
-  //console.log("Starting get ticket");
+  console.log("Starting get ticket");
   try {
     //console.log("Starting get ticket try");
     const url = process.env.URL + `/api/Tickets/` ;
-    //console.log("Second URL :", url);
+    console.log("First fetch URL : ", url);
+    console.log("Second fetch URL : ", process.env.URL + `/api/Tickets/${id}`);
+
     const res = await fetch(process.env.URL + `/api/Tickets/${id}`, {
       cache: "no-store",
     });
