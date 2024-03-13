@@ -1,4 +1,4 @@
-version: '1.2'
+version: "1.2"
 
 networks:
   proxy:
@@ -11,8 +11,7 @@ services:
       - proxy
     restart: always
     env_file:
-      - path: ./stack.env
-      required: true # default
+      - stack.env
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.ticketsapp.rule=Host(`ticketsapp.muldoon.eu`)"
