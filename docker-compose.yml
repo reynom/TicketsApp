@@ -10,6 +10,9 @@ services:
     networks:
       - proxy
     restart: always
+    env_file:
+      - path: ./stack.env
+        required: true # default
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.ticketsapp.rule=Host(`ticketsapp.muldoon.eu`)"
