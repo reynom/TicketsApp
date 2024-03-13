@@ -31,7 +31,11 @@ const TicketCard = ({ ticket }) => {
           <DeleteBlock id={ticket._id} />
         </div>
       </div>
-      <Link href={`/TicketPage/${ticket._id}`} style={{ display: "contents" }}>
+      {/* TODO This could be the problem */}
+      <Link
+        href={process.env.URL + `/TicketPage/${ticket._id}`}
+        style={{ display: "contents" }}
+      >
         <h4 className="mb-1">{ticket.title}</h4>
         <hr className="h-px  border-0 bg-page mb-2 "></hr>
         <p className="whitespace-pre-wrap">{ticket.description}</p>
