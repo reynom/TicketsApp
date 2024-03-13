@@ -1,11 +1,13 @@
 import React from "react";
 import TicketCard from "./(components)/TicketCard";
 
+console.log("Running main page")
+
 const getTickets = async () => {
   try {
     const url = process.env.URL;
     console.log("First Check URL :", url + "/api/Tickets");
-    const res = await fetch(process.env.URL + "/api/Tickets", {
+    const res = await fetch(url + "/api/Tickets", {
       cache: "no-store",
     });
 
@@ -19,7 +21,10 @@ const getTickets = async () => {
   }
 };
 
+
+
 const Dashboard = async () => {
+  console.log("Dashboad call")
   const data = await getTickets();
 
   // Make sure we have tickets needed for production build.

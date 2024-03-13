@@ -1,6 +1,8 @@
 import Ticket from "@/app/models/Ticket";
 import { NextResponse } from "next/server";
 
+//console.log("Ticket api route called without ID")
+
 export async function GET(request, { params }) {
   const { id } = params;
 

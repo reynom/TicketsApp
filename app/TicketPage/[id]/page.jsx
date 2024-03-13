@@ -1,14 +1,16 @@
 import EditTicketForm from "@/app/(components)/EditTicketForm";
 
 const getTicketById = async (id) => {
-  console.log("Starting get ticket");
+  //console.log("Starting get ticket");
   try {
-    console.log("Starting get ticket try");
+    //console.log("Starting get ticket try");
     const url = process.env.URL + `/api/Tickets/` ;
-    console.log("Second URL :", url);
+    //console.log("Second URL :", url);
     const res = await fetch(process.env.URL + `/api/Tickets/${id}`, {
       cache: "no-store",
     });
+
+    console.log("Return1", res)
 
     if (!res.ok) {
       throw new Error("Failed to fetch topic");
@@ -16,7 +18,7 @@ const getTicketById = async (id) => {
 
     return res.json();
   } catch (error) {
-    console.log(error);
+    console.log("Get Failed =  ", error);
   }
 };
 

@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 const DeleteBlock = ({ id }) => {
   const router = useRouter();
 
-  console.log("Delete ID: ", id)
+  console.log("Delete Blcok ID: ", id)
   
   // process.env.URL
   // http://localhost:3000
