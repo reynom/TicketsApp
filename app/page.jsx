@@ -5,7 +5,7 @@ console.log("Running main page")
 
 const getTickets = async () => {
   try {
-    const url = process.env.URL;
+    //const url = process.env.URL;
     //console.log("First Check URL :", url + "/api/Tickets");
     const res = await fetch("http://localhost:3000/api/Tickets", {
       cache: "no-store",
