@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 const DeleteBlock = ({ id }) => {
   const router = useRouter();
 
-  console.log("Delete Blcok ID: ", id)
+  //console.log("Delete Block ID: ", id)
   
   // process.env.URL
   // http://localhost:3000
@@ -24,7 +24,7 @@ const DeleteBlock = ({ id }) => {
   return (
     <FontAwesomeIcon
       icon={faX}
-      className=" text-red-400 hover:cursor-pointer hover:text-red-200"
+      className="text-red-400 hover:cursor-pointer hover:text-red-200"
       onClick={deleteTicket}
     />
   );
