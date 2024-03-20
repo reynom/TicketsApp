@@ -1,14 +1,10 @@
 import EditTicketForm from "@/app/(components)/EditTicketForm";
 
 const getTicketById = async (id) => {
-  console.log("Starting get ticket");
   try {
-
     const res = await fetch(`http://localhost:3000/api/Tickets/${id}`, {
       cache: "no-store",
     });
-
-    console.log("Return1", res)
 
     if (!res.ok) {
       throw new Error("Failed to fetch topic");
@@ -16,7 +12,7 @@ const getTicketById = async (id) => {
 
     return res.json();
   } catch (error) {
-    console.log("Get Failed =  ", error);
+    console.log(error);
   }
 };
 
